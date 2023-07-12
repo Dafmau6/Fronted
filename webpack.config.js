@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+//vite.js que hace lo mismo que webpack pero mejor
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -11,6 +11,13 @@ module.exports = {
     mode: 'development',
     resolve: {
         extensions: ['.js', '.jsx'],
+        alias: {
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@config': path.resolve(__dirname, 'src/config'),
+            '@layout': path.resolve(__dirname, 'src/layout'),
+            '@style': path.resolve(__dirname, 'src/style')
+        },
+
     },
     module: {
         rules: [
