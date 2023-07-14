@@ -3,6 +3,7 @@ import '@style/global.scss'
 import { Layout, theme } from 'antd';
 import ContentDisplay from '@layout/ContentDisplay';
 import { QueryClient, QueryClientProvider } from 'react-query';
+
 const queryClient = new QueryClient();
 
 const { Header, Content, Footer } = Layout;

@@ -15,11 +15,11 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components'),
             '@config': path.resolve(__dirname, 'src/config'),
             '@layout': path.resolve(__dirname, 'src/layout'),
-            '@style': path.resolve(__dirname, 'src/style'),
             '@services': path.resolve(__dirname, 'src/services'),
-            '@hooks': path.resolve(__dirname, 'src/hooks')
-        },
-
+            '@style': path.resolve(__dirname, 'src/style'),
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@hooks': path.resolve(__dirname, 'src/hooks'),
+        }
     },
     module: {
         rules: [
@@ -45,7 +45,6 @@ module.exports = {
                     "css-loader",
                     "sass-loader",
                 ]
-
             }
         ]
     },
@@ -55,15 +54,8 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css'
-        }),
-    ],
-    devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
-        compress: true,
-        port: 3005,
-    }
-
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        })
+    ]
 };

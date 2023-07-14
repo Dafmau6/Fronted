@@ -1,19 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import useCreateTask from '@hooks/useCreateTask';
 import { Form, Input, Button, Select, DatePicker } from 'antd';
 
 const { Option } = Select;
+
 const CrearTarea = () => {
 
     const crear = useCreateTask();
 
     const onFinish = (values) => {
         console.log('Success:', values);
-        crear.mutate(values);
+            crear.mutate(values);
     };
+
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
 
     return (
     
@@ -42,7 +45,7 @@ const CrearTarea = () => {
 
             <Form.Item
                 label="Nombres"
-                name="nomb"
+                name="nombres"
 
                 rules={[{
                     required: true, message: 'Please input the title!'
@@ -53,7 +56,7 @@ const CrearTarea = () => {
 
             <Form.Item
                 label="Apellidos"
-                name="apell"
+                name="apellidos"
 
                 rules={[{
                     required: true, message: 'Please input the title!'
@@ -65,7 +68,7 @@ const CrearTarea = () => {
 
             <Form.Item
                 label="Tipo de contrato"
-                name="tip_contra"
+                name="tipocontrato"
                 rules={[{
                     required: true, message: 'Please input the description!'
                 }]}
@@ -76,7 +79,7 @@ const CrearTarea = () => {
 
             < Form.Item
                 label="Genero"
-                name="gen"
+                name="genero"
                 rules={
                     [{
                         required: true, message: 'Please select the status!'
